@@ -6,6 +6,11 @@ from chatterbox.tts import ChatterboxTTS
 
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+print(f"Gradio App: PyTorch is using device: {DEVICE}")
+print(f"Gradio App: CUDA available: {torch.cuda.is_available()}")
+if torch.cuda.is_available():
+    print(f"Gradio App: CUDA device count: {torch.cuda.device_count()}")
+    print(f"Gradio App: CUDA device name: {torch.cuda.get_device_name(0)}")
 
 
 def set_seed(seed: int):
